@@ -34,6 +34,14 @@
     <string name="share_text_plant" translation_description="The default messaged used when sharing a plant on SNS, etc.">Check out the %s plant in the Android Sunflower app</string>
     <string name="gallery_title" translation_description="Title for the photo gallery screen">Photos by Unsplash</string>
 
+    <!-- Trefle plant search -->
+    <string name="trefle_search_title" translation_description="Title of the screen where the user searches the Trefle plant database to find and add new plants to their garden.">Find plants (Trefle)</string>
+    <string name="trefle_search_field_label" translation_description="Label of the text field used to search plants in the Trefle catalog.">Plant name, e.g. monstera</string>
+    <string name="trefle_search_hint" translation_description="Hint text shown when the Trefle search has no results yet.">Enter a plant name to search the Trefle catalog (trefle.io).</string>
+    <string name="trefle_search_error" translation_description="Error message shown when the Trefle search request fails. %1$s contains the error details.">Search failed: %1$s</string>
+    <string name="trefle_add" translation_description="Button label to add a plant found via Trefle to the local plant list.">Add</string>
+    <string name="trefle_added" translation_description="Button label shown after a Trefle plant has been added to the local plant list.">Added</string>
+
     <!-- String plurals and their related prefix / suffix strings -->
     <string name="watering_needs_prefix" translation_description="Prefix for the text describing how often a plant should be watered. Used in combination with watering_needs_suffix.">Watering needs</string>
     <plurals name="watering_needs_suffix">

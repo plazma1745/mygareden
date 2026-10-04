@@ -16,6 +16,7 @@
 
 package com.google.samples.apps.sunflower.di
 
+import com.google.samples.apps.sunflower.api.TrefleService
 import com.google.samples.apps.sunflower.api.UnsplashService
 import dagger.Module
 import dagger.Provides
@@ -31,5 +32,11 @@ class NetworkModule {
     @Provides
     fun provideUnsplashService(): UnsplashService {
         return UnsplashService.create()
+    }
+
+    @Singleton
+    @Provides
+    fun provideTrefleService(): TrefleService {
+        return TrefleService.create()
     }
 }

@@ -36,6 +36,8 @@ android {
 
     // Consult the README on instructions for setting up Unsplash API key
     buildConfigField("String", "UNSPLASH_ACCESS_KEY", "\"" + getUnsplashAccess() + "\"")
+    // Trefle API token (free registration at https://trefle.io) — see README
+    buildConfigField("String", "TREFLE_TOKEN", "\"" + getTrefleToken() + "\"")
     javaCompileOptions {
       annotationProcessorOptions {
         arguments["dagger.hilt.disableModulesHaveInstallInCheck"] = "true"
@@ -164,4 +166,8 @@ dependencies {
 
 fun getUnsplashAccess(): String? {
   return project.findProperty("unsplash_access_key") as? String
+}
+
+fun getTrefleToken(): String {
+  return project.findProperty("trefle_token") as? String ?: ""
 }

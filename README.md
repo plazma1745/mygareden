@@ -41,6 +41,23 @@ unsplash_access_key=<your Unsplash access key>
 
 The app is still usable without an API key, though you won't be able to navigate to the gallery screen.
 
+### Trefle API token
+
+Sunflower uses the [Trefle API](https://trefle.io) — a free, open plant database — for the
+"Find plants (Trefle)" screen, which lets you search for plants and add them to your garden.
+To use the API, register for a free account at [https://trefle.io/users/sign_up](https://trefle.io/users/sign_up)
+and copy your personal API token from [https://trefle.io/profile](https://trefle.io/profile).
+
+Once you have the token, add this line to the `gradle.properties` file, either in your user home
+directory (usually `~/.gradle/gradle.properties` on Linux and Mac) or in the project's root folder:
+
+```
+trefle_token=<your Trefle API token>
+```
+
+The app is still usable without a token, but the plant search screen will show an error
+until the token is configured.
+
 Android Studio IDE setup
 ------------------------
 For development, the latest version of Android Studio is required. The latest version can be
