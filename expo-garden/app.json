@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Garden",
+    "slug": "expo-garden",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "extra": {
+      "trefleToken": ""
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourname.garden"
+    },
+    "android": {
+      "package": "com.yourname.garden",
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
