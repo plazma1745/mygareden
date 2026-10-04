@@ -28,6 +28,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.compose.gallery.GalleryScreen
+import com.google.samples.apps.sunflower.compose.trefle.TrefleSearchScreen
 import com.google.samples.apps.sunflower.compose.home.HomeScreen
 import com.google.samples.apps.sunflower.compose.plantdetail.PlantDetailsScreen
 
@@ -53,7 +54,15 @@ fun SunFlowerNavHost(
                             plantId = it.plantId
                         )
                     )
+                },
+                onFindPlantClick = {
+                    navController.navigate(Screen.TrefleSearch.route)
                 }
+            )
+        }
+        composable(route = Screen.TrefleSearch.route) {
+            TrefleSearchScreen(
+                onUpClick = { navController.navigateUp() }
             )
         }
         composable(

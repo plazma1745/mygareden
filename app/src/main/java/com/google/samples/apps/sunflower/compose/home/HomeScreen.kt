@@ -29,6 +29,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -70,6 +72,7 @@ enum class SunflowerPage(
 fun HomeScreen(
     modifier: Modifier = Modifier,
     onPlantClick: (Plant) -> Unit = {},
+    onFindPlantClick: () -> Unit = {},
     viewModel: PlantListViewModel = hiltViewModel(),
     pages: Array<SunflowerPage> = SunflowerPage.values()
 ) {
@@ -82,6 +85,7 @@ fun HomeScreen(
             HomeTopAppBar(
                 pagerState = pagerState,
                 onFilterClick = { viewModel.updateData() },
+                onFindPlantClick = onFindPlantClick,
                 scrollBehavior = scrollBehavior
             )
         }
@@ -163,6 +167,7 @@ fun HomePagerScreen(
 private fun HomeTopAppBar(
     pagerState: PagerState,
     onFilterClick: () -> Unit,
+    onFindPlantClick: () -> Unit,
     scrollBehavior: TopAppBarScrollBehavior,
     modifier: Modifier = Modifier
 ) {
@@ -176,6 +181,14 @@ private fun HomeTopAppBar(
         modifier = modifier,
         actions = {
             if (pagerState.currentPage == SunflowerPage.PLANT_LIST.ordinal) {
+                IconButton(onClick = onFindPlantClick) {
+                    Icon(
+                        imageVector = Icons.Filled.Search,
+                        contentDescription = stringResource(
+                            id = R.string.trefle_search_title
+                        )
+                    )
+                }
                 IconButton(onClick = onFilterClick) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_filter_list_24dp),

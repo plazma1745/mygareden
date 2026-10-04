@@ -35,6 +35,10 @@ class PlantRepository @Inject constructor(private val plantDao: PlantDao) {
     fun getPlantsWithGrowZoneNumber(growZoneNumber: Int) =
         plantDao.getPlantsWithGrowZoneNumber(growZoneNumber)
 
+    suspend fun upsertPlant(plant: Plant) {
+        plantDao.upsertAll(listOf(plant))
+    }
+
     companion object {
 
         // For Singleton instantiation

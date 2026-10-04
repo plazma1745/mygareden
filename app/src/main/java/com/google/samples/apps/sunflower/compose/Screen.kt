@@ -44,4 +44,6 @@ sealed class Screen(
         fun createRoute(plantName: String) = "gallery/${plantName}"
 
     }
+
+    data object TrefleSearch : Screen("trefleSearch")
 }
